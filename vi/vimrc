@@ -1,0 +1,59 @@
+"
+" Joshua Spann's .vimrc file
+"   Optimized for lazy programming & trying to reduce that Ctrl/Modifier-pinky!
+"
+
+
+"""""""""""""""""""""""""""""""""
+" PROGRAMMING STYLES AND SETUPS "
+"""""""""""""""""""""""""""""""""
+
+" Code and Syntax Highlighting
+  syntax on
+" Set indentation to 4 Spaces instead of Single Tabs
+  "set tabstop=4
+
+" Use this to have numbers relative to cursor line, where cursor line is always 0
+  set relativenumber
+" Use this after the above to have the 0 replaced with the actual line number
+  set number
+
+" Highlight the Cursor's Current Line
+  set cursorline
+  hi CursorLine   cterm=NONE ctermbg=grey ctermfg=black guibg=grey guifg=black
+
+" Allows 'fuzzy' Finding
+  "set path+=**
+  "set wildmenu
+
+" Enable Spell Checking
+  "set spell
+" Auto-Complete from Dictionary as Well (only if 'set spell' enabled above)
+  "set complete=.,w,b,u,t,i,kspell
+
+
+""""""""""""""""""""""
+" NORMAL MODE REMAPS "
+""""""""""""""""""""""
+
+" Remap the ; to : to speed up clicking
+  nnoremap ; :
+" Use Ctrl-s to save as option (providing shell won't freeze IO)
+  nnoremap <c-s> :w<CR>
+  inoremap <c-s> <Esc>:w<CR>a
+" Remap the ^ key to use the default _, since they're the same and _ uses #s
+  nnoremap ^ _
+" Remap - to go to first non-white-space character of line
+  nnoremap - _
+" , becomes useful and replaces = indentation
+  nnoremap , =
+" Remap = to go to end of line like $
+  nnoremap = $
+" Remap q to act as Ctrl-w to Navigate Windows
+  nnoremap q <C-w>
+
+
+"""""""""""""""""""
+" CUSTOM COMMANDS
+"""""""""""""""""""
+command CT :!ctags -R
