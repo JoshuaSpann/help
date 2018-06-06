@@ -51,6 +51,11 @@
   nnoremap = $
 " Remap q to act as Ctrl-w to Navigate Windows
   nnoremap q <C-w>
+" Remap q<h|j|k|l> to make quick Window Navigation similar to Tab Navigation
+  nnoremap gh <c-w>h
+  nnoremap gj <c-w>j
+  nnoremap gk <c-w>k
+  nnoremap gl <c-w>l
 
 
 """""""""""""""""""
