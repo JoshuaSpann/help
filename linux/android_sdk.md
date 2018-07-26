@@ -11,7 +11,7 @@ Go to the [developer site for Android](https://developer.android.com/studio/#com
 
 ### Setting up the Command-Line SDK Tools
 Create a directory for the Android SDK:  
-`mkdir ~/adnroid_sdk`
+`mkdir ~/android_sdk`
 
 Unzip the SDK tools to a folder of your choosing:  
 `unzip sdk-tools-linux-#######.zip -d ~/android_sdk/`
