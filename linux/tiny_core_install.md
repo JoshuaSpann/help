@@ -46,7 +46,7 @@ If you want to use grub as a bootloader, you will have to load it first:
 
 Next, perform a typical grub installation:
 - `sudo grub-install --boot-directory=/mnt/sda1/boot /dev/sda` will give a warning, but should successfullt install:
-> `grub-install: warning: cannot open directory \`/usr/local/share/locale': No such file or directory.`
+> `grub-install: warning: cannot open directory '/usr/local/share/locale': No such file or directory.`
 > `Installation finished. No error reported.`
 
 Configure grub:
