@@ -45,7 +45,7 @@ To insert special characters, go into insert mode first, ***prepend all commands
 `c,`
 
 **A with grave, ageiu, umlaut:**
-`a'`, `a``, `a:`
+`a'`, `a\``, `a:`
 
 
 ---
@@ -56,6 +56,7 @@ To insert special characters, go into insert mode first, ***prepend all commands
 
 ### INSERT Mode Commands Commands
 Append all of the following commands with `^x`
+
 **Filename Completion:**  
 `^f`
 
@@ -110,3 +111,4 @@ Go into insert mode then press Ctrl-x:
 
 # RESOURCES #
 https://whileimautomaton.net/2008/11/vimm3/operator
+http://vimdoc.sourceforge.net/htmldoc/digraph.html
