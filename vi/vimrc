@@ -1,64 +1,108 @@
+"""
+" Joshua Spann's .vimrc for Vim v8+
+" Made for lazy programmers with ergonomics in mind!
 "
-" Joshua Spann's .vimrc file
-"   Optimized for lazy programming & trying to reduce that Ctrl/Modifier-pinky!
+"   Use as you wish and at your own peril.
 "
+"   Joshua Spann is not to be held accountable to any damages made
+"   by the use of this .vimrc.
+"
+"   The Alt (Modifier) key is used to map keys similar to DOS/Haiku.
+"""
 
+""""""""""""""""""""""""
+""  GENERAL SETTINGS  ""
+""""""""""""""""""""""""
 
-"""""""""""""""""""""""""""""""""
-" PROGRAMMING STYLES AND SETUPS "
-"""""""""""""""""""""""""""""""""
-
-" Code and Syntax Highlighting
+" Make it easier for programming
   syntax on
-" Set indentation to 4 Spaces instead of Single Tabs
-  "set tabstop=4
-
-" Use this to have numbers relative to cursor line, where cursor line is always 0
-  set relativenumber
-" Use this after the above to have the 0 replaced with the actual line number
   set number
-
-" Highlight the Cursor's Current Line
+  set relativenumber
   set cursorline
-  hi CursorLine   cterm=NONE ctermbg=grey ctermfg=black guibg=grey guifg=black
+  filetype indent on
 
-" Allows 'fuzzy' Finding
-  "set path+=**
-  "set wildmenu
+" It makes more sense to load new windows to the bottom & right like tmux
+  set splitbelow
+  set splitright
 
-" Enable Spell Checking
-  "set spell
-" Auto-Complete from Dictionary as Well (only if 'set spell' enabled above)
-  "set complete=.,w,b,u,t,i,kspell
+" Set term to powershell instead of cmd if on windows, other OSes use zsh
+  if has("win32")
+	set shell=powershell
+  else
+	set shell=zsh
+  endif
 
 
-""""""""""""""""""""""
-" NORMAL MODE REMAPS "
-""""""""""""""""""""""
 
-" Remap the ; to : to speed up clicking
+"""""""""""""""""""
+""  NORMAL MODE  ""
+"""""""""""""""""""
+
+" It is easier to use ; for replacing : than repeating the last f command
   nnoremap ; :
-" Use Ctrl-s to save as option (providing shell won't freeze IO)
-  nnoremap <c-s> :w<CR>
-  inoremap <c-s> <Esc>:w<CR>a
-" Remap the ^ key to use the default _, since they're the same and _ uses #s
+" _ is more efficient than ^ and since they are so similar they should be equal
   nnoremap ^ _
-" Remap - to go to first non-white-space character of line
-  nnoremap - _
-" , becomes useful and replaces = indentation
-  nnoremap , =
-" Remap = to go to end of line like $
-  nnoremap = $
-" Remap q to act as Ctrl-w to Navigate Windows
-  nnoremap q <C-w>
-" Remap q<h|j|k|l> to make quick Window Navigation similar to Tab Navigation
-  nnoremap gh <c-w>h
-  nnoremap gj <c-w>j
-  nnoremap gk <c-w>k
-  nnoremap gl <c-w>l
+
+
+" Generic File Commands "
+  nnoremap <m-e> <esc>
+  nnoremap <m-q> <esc>:wq<cr>
+  nnoremap <m-Q> <esc>:q!<cr>
+  nnoremap <m-w> <esc>:w<cr>
+
+" Window Navigation "
+  nnoremap <m-h> <c-w>h
+  nnoremap <m-j> <c-w>j
+  nnoremap <m-k> <c-w>k
+  nnoremap <m-l> <c-w>l
+
+" Tab Navigation "
+  nnoremap <m-H> gT
+  nnoremap <m-L> gt
+
 
 
 """""""""""""""""""
-" CUSTOM COMMANDS
+""  INSERT MODE  ""
 """""""""""""""""""
-command CT :!ctags -R
+
+" Generic File Commands "
+  inoremap <m-e> <esc>
+  inoremap <m-q> <esc>:wq<cr>
+  inoremap <m-Q> <esc>:q!<cr>
+  inoremap <m-w> <esc>:w<cr>
+
+" Window Navigation "
+  inoremap <m-h> <c-w>h
+  inoremap <m-j> <c-w>j
+  inoremap <m-k> <c-w>k
+  inoremap <m-l> <c-w>l
+
+" File Modification "
+  inoremap <m-d> <esc>dd<cr>
+
+" Tab Navigation "
+  inoremap <m-H> gT
+  inoremap <m-L> gt
+
+
+
+"""""""""""""""""""""
+""  TERMINAL MODE  ""
+"""""""""""""""""""""
+
+" Generic File Commands "
+  tnoremap <m-e> <c-w>N
+  tnoremap <m-q> exit<cr>
+  tnoremap <m-Q> <c-c>exit<cr>
+  tnoremap <m-w> <esc>:w<cr>
+
+" Window Navigation "
+  tnoremap <m-h> <c-w>h
+  tnoremap <m-j> <c-w>j
+  tnoremap <m-k> <c-w>k
+  tnoremap <m-l> <c-w>l
+
+" Tab Navigation "
+  tnoremap <m-H> gT
+  tnoremap <m-L> gt
