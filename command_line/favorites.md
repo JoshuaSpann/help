@@ -9,6 +9,10 @@ A collection of my favorite command-line apps, games, and utilities!
 - `sc`: A modal spreadsheet editor like Microsoft Excel
 - `ed`: A modal text editor that edits one line at a time
 - `plebtracker`: A simple music tracker
+- `w3m`: A curses-based web browser that is like vim!
+- `ttyrec`: Suite of utilities to record and playback terminal sessions
+	- `ttyrec`: Records terminal
+	- `ttyplay`: Plays back terminal recording
 
 ### Command Line Utilities
 - `ncurses`: A library that allows you to control each character in your terminal
